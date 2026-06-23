@@ -35,7 +35,19 @@ function AuthPage() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-muted/30 p-4">
-      <div className="w-full max-w-md">
+      <div className="w-full max-w-md space-y-6">
+        <div className="flex flex-col items-center gap-2 text-center pb-2">
+          <svg viewBox="0 0 24 24" fill="currentColor" className="h-12 w-12 text-primary">
+            <circle cx="12" cy="8" r="4" />
+            <circle cx="8" cy="12" r="4" />
+            <circle cx="16" cy="12" r="4" />
+            <path d="M12 12.5c0 3.5-1.5 6-4 7.5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+          </svg>
+          <h1 className="font-bold text-3xl tracking-tight">
+            Mad<span className="text-primary font-semibold">easy</span>
+          </h1>
+          <p className="text-sm text-muted-foreground">Sistema de Gestão & Estoque</p>
+        </div>
         {data?.needsBootstrap ? (
           <BootstrapForm onDone={() => refetch()} />
         ) : (

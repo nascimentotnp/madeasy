@@ -61,8 +61,15 @@ export function AppSidebar() {
       <SidebarHeader>
         <div className="flex items-center justify-between gap-2 px-2 py-1.5">
           <div className="flex items-center gap-2">
-            <Package className="h-5 w-5 text-primary shrink-0" />
-            <span className="font-semibold group-data-[collapsible=icon]:hidden">Estoque</span>
+            <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-primary shrink-0">
+              <circle cx="12" cy="8" r="4" />
+              <circle cx="8" cy="12" r="4" />
+              <circle cx="16" cy="12" r="4" />
+              <path d="M12 12.5c0 3.5-1.5 6-4 7.5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+            </svg>
+            <span className="font-bold text-lg group-data-[collapsible=icon]:hidden tracking-tight">
+              Mad<span className="text-primary font-semibold">easy</span>
+            </span>
           </div>
           <div className="group-data-[collapsible=icon]:hidden">
             <NotificationsBell />

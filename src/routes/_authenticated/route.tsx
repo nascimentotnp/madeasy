@@ -20,7 +20,7 @@ function AuthedLayout() {
       <SidebarInset>
         <header className="flex h-12 items-center gap-2 border-b px-3 sticky top-0 bg-background z-10">
           <SidebarTrigger />
-          <span className="text-sm text-muted-foreground">Controle de Estoque</span>
+          <span className="text-sm text-muted-foreground font-medium">Madeasy — Gestão</span>
         </header>
         <Outlet />
       </SidebarInset>
