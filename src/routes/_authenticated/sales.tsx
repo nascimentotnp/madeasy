@@ -13,7 +13,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { ArrowLeft, Plus, ShoppingCart, Trash2, CheckCircle2, Truck, Search, History, FileText, MessageCircle, Undo2, Tag } from "lucide-react";
+import { ArrowLeft, Plus, ShoppingCart, Trash2, CheckCircle2, Truck, Search, History, FileText, Undo2, Tag } from "lucide-react";
 import { useMyRoles } from "@/hooks/use-my-roles";
 import { downloadSalePdf, buildWhatsAppLink } from "@/lib/sale-pdf";
 
@@ -214,9 +214,11 @@ function SalesPage() {
                         <Button size="sm" variant="ghost" title="Baixar PDF" onClick={() => downloadSalePdf(s)}>
                           <FileText className="h-4 w-4" />
                         </Button>
-                        <Button size="sm" variant="ghost" title="Enviar no WhatsApp" asChild>
+                        <Button size="sm" variant="ghost" title="Enviar no WhatsApp" asChild className="hover:text-emerald-600">
                           <a href={buildWhatsAppLink(s)} target="_blank" rel="noreferrer">
-                            <MessageCircle className="h-4 w-4" />
+                            <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
+                              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.864.002-2.637-1.03-5.114-2.905-6.99C16.257 1.875 13.777 1.83 11.47 1.83 6.035 1.83 1.61 6.249 1.607 11.692c-.001 1.761.475 3.483 1.378 5.017L2.004 22.01l5.441-1.425zM17.3 14.39c-.29-.145-1.716-.847-1.982-.944-.265-.097-.459-.145-.653.145-.194.291-.75.944-.919 1.139-.17.194-.339.218-.629.073-.29-.145-1.226-.452-2.337-1.444-.863-.77-1.446-1.72-1.616-2.011-.17-.29-.018-.448.127-.592.13-.13.29-.339.435-.509.145-.17.194-.291.29-.485.097-.194.048-.364-.024-.509-.072-.145-.653-1.573-.895-2.155-.236-.569-.472-.491-.653-.5-.17-.008-.364-.01-.557-.01s-.509.073-.775.364c-.266.291-1.017.994-1.017 2.424s1.041 2.812 1.186 3.006c.145.194 2.051 3.132 4.969 4.39.694.3 1.236.479 1.657.613.698.222 1.334.191 1.837.116.56-.084 1.716-.701 1.958-1.38.243-.679.243-1.26.17-1.38-.073-.122-.266-.194-.557-.339z" />
+                            </svg>
                           </a>
                         </Button>
                         {s.customers && <PrintLabelButton sale={s} />}
