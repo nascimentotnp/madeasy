@@ -1,0 +1,2 @@
+ALTER TABLE public.movements ADD COLUMN returned_from_id UUID REFERENCES public.movements(id) ON DELETE SET NULL;
+CREATE UNIQUE INDEX movements_returned_from_id_unique ON public.movements(returned_from_id) WHERE returned_from_id IS NOT NULL;
